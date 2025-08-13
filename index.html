@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spherical Projection App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <h1>Spherical Projection Viewer</h1>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" id="imageUrl" value="https://threejs.org/examples/textures/planets/earth_atmos_4096.jpg">
+            <button id="loadImageBtn">Load Image</button>
+        </div>
+
+        <div class="control-group">
+            <label for="horizontalCoverage">Horizontal Coverage (degrees):</label>
+            <input type="range" id="horizontalCoverage" min="0" max="360" value="360">
+            <span id="horizontalCoverageValue">360°</span>
+        </div>
+
+        <div class="control-group">
+            <label for="verticalCoverageTop">Vertical Coverage Top (degrees):</label>
+            <input type="range" id="verticalCoverageTop" min="0" max="90" value="90">
+            <span id="verticalCoverageTopValue">90°</span>
+        </div>
+        <div class="control-group">
+            <label for="verticalCoverageBottom">Vertical Coverage Bottom (degrees):</label>
+            <input type="range" id="verticalCoverageBottom" min="0" max="90" value="90">
+            <span id="verticalCoverageBottomValue">90°</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="flipHorizontal">Flip Horizontal:</label>
+            <input type="checkbox" id="flipHorizontal">
+        </div>
+
+        <div class="control-group">
+            <label for="cropLeft">Crop Left (%):</label>
+            <input type="range" id="cropLeft" min="0" max="100" value="0">
+            <span id="cropLeftValue">0%</span>
+        </div>
+        <div class="control-group">
+            <label for="cropRight">Crop Right (%):</label>
+            <input type="range" id="cropRight" min="0" max="100" value="0">
+            <span id="cropRightValue">0%</span>
+        </div>
+        <div class="control-group">
+            <label for="cropTop">Crop Top (%):</label>
+            <input type="range" id="cropTop" min="0" max="100" value="0">
+            <span id="cropTopValue">0%</span>
+        </div>
+        <div class="control-group">
+            <label for="cropBottom">Crop Bottom (%):</label>
+            <input type="range" id="cropBottom" min="0" max="100" value="0">
+            <span id="cropBottomValue">0%</span>
+        </div>
+
+        <button id="downloadBtn">Download Image</button>
+    </div>
+
+    <div id="container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
